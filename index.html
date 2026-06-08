@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestfriend Day, My Pookie! ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Chewy&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset */
+        body, h1, h2, h3, p, div, span, button, video { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Caveat', cursive, sans-serif;
+            background-color: #f7effe; 
+            color: #4b306b; 
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle, #ffe6f0 1px, transparent 1px),
+                radial-gradient(circle, #ffe6f0 1px, transparent 1px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            padding-bottom: 50px;
+        }
+
+        header {
+            background-color: #fff9fc;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 5px solid #ffe6f0;
+            position: relative;
+        }
+
+        header::before, header::after {
+            content: '';
+            position: absolute;
+            font-size: 1.8em;
+            color: #d8b6ff;
+        }
+        header::before { content: '🐾'; left: 10%; top: 20%; transform: rotate(-15deg); }
+        header::after { content: '🐰'; right: 10%; bottom: 20%; transform: rotate(15deg); }
+
+        h1.pookie-title {
+            font-family: 'Chewy', cursive;
+            font-size: 3.5em;
+            color: #d896ff; 
+            text-shadow: 2px 2px 0px #fff;
+            margin-bottom: 10px;
+        }
+
+        h2.bestie-subtitle {
+            font-size: 1.8em;
+            color: #4b306b;
+            font-weight: normal;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .personal-intro {
+            background-color: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 8px 15px rgba(216, 150, 255, 0.1);
+            margin-bottom: 40px;
+            border: 3px solid #ffe6f0;
+        }
+
+        .intro-text {
+            font-size: 1.6em;
+            color: #4b306b;
+            text-align: center;
+        }
+
+        .signature-section {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .dialogue-box {
+            background-color: #ffe8ee; 
+            border-radius: 20px;
+            padding: 30px;
+            border: 4px solid #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .food-icon { font-size: 2.5em; display: block; margin-bottom: 10px; color: #ffb366; }
+
+        .dialogue-text {
+            font-size: 2.5em; 
+            color: #9d3a77; 
+            font-weight: bold;
+            font-family: 'Chewy', cursive;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .dialogue-subtext {
+            font-size: 1.2em;
+            color: #4b306b;
+            margin-top: 10px;
+            font-weight: normal;
+        }
+
+        h2.section-title {
+            font-family: 'Chewy', cursive;
+            font-size: 2.5em;
+            color: #d896ff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Image Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .gallery-item {
+            background-color: white;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+            border: 3px solid #ffe6f0;
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .gallery-item:hover { transform: translateY(-5px); }
+
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #fff;
+            margin-bottom: 10px;
+        }
+
+        .gallery-caption {
+            font-family: 'Chewy', cursive;
+            color: #d896ff;
+            font-size: 1.4em;
+        }
+
+        h2.section-title span.masha { content: '🐻'; margin-left: 10px; }
+        h2.section-title span.judy { content: '🥕'; margin-right: 10px; }
+
+        /* Video Section Styling */
+        .video-container {
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 8px 15px rgba(216, 150, 255, 0.1);
+            border: 3px solid #ffe6f0;
+            margin: 0 auto 60px auto;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .video-container video {
+            width: 100%;
+            border-radius: 15px;
+            outline: none;
+        }
+
+        /* Surprise Section */
+        .surprise-section {
+            background-color: white;
+            border-radius: 30px;
+            padding: 40px;
+            border: 5px solid #ffe6f0;
+            box-shadow: 0 10px 25px rgba(216, 150, 255, 0.15);
+            margin-top: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .surprise-section::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #ffda79; 
+            border-radius: 50%;
+            border: 5px solid white;
+        }
+
+        .surprise-btn {
+            background-color: #d8b6ff; 
+            color: white;
+            font-family: 'Chewy', cursive;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.6em;
+            border-radius: 35px;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(216, 150, 255, 0.3);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .surprise-btn:hover { background-color: #ffe6f0; color: #4b306b; transform: scale(1.05); }
+
+        #surprise-message {
+            display: none; 
+            margin-top: 30px;
+            font-size: 1.6em;
+            color: #4b306b;
+            border-radius: 20px;
+            padding: 20px;
+            background-color: #fff9fc;
+            border: 3px solid #ffe6f0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff9fc;
+            color: #d8b6ff;
+            font-size: 1.2em;
+            margin-top: 50px;
+            border-top: 3px solid #ffe6f0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="pookie-title">Happy Best Friend Day, My Pookie! ✨</h1>
+        <h2 class="bestie-subtitle">To the most caring, understanding, short, mischievous, and street-food loving bestie ever.</h2>
+    </header>
+
+    <div class="container">
+        <div class="personal-intro">
+            <p class="intro-text">Hey bestie! Since today is Best Friend Day, I wanted to make you feel extra special. You're caring like Judy, persistent and mischievous like Masha, and short like both! Most importantly, you are 100% you, and that’s why you’re my favorite.</p>
+        </div>
+
+        <div class="signature-section">
+            <h2 class="section-title">Your Signature Move (And How You Keep Me in Line)</h2>
+            <div class="dialogue-box">
+                <span class="food-icon">🍕🌮</span> 
+                <p class="dialogue-text">"ja nahi bolat ata or maar khashil ata tu"</p>
+                <p class="dialogue-subtext">[Go, I won't speak now, or you'll get beaten now!]</p>
+                <p class="dialogue-subtext">You love to annoy me, then get funny mad, but you always treat me good after! Thanks for existing!</p>
+            </div>
+        </div>
+
+        <h2 class="section-title"><span>🐰</span> Memory Lane Gallery <span>🐻</span></h2>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="pic1.jpeg" alt="Our Best Selfie!">
+                <p class="gallery-caption">Our Best Selfie! 📸</p>
+            </div>
+            <div class="gallery-item">
+                <img src="pic2.jpeg" alt="Classic Shenanigans!">
+                <p class="gallery-caption">Classic Shenanigans! 🐰</p>
+            </div>
+            <div class="gallery-item">
+                <img src="pic3.jpeg" alt="Our Fun Memory 3">
+                <p class="gallery-caption">Adventures! 🐻</p>
+            </div>
+            <div class="gallery-item">
+                <img src="pic4.jpeg" alt="Our Fun Memory 4">
+                <p class="gallery-caption">Mischief Managed! 🥕</p>
+            </div>
+            <div class="gallery-item">
+                <img src="pic5.jpeg" alt="Our Fun Memory 5">
+                <p class="gallery-caption">Street Food Marathon! 🍕</p>
+            </div>
+            <div class="gallery-item">
+                <img src="pic6.jpeg" alt="Our Fun Memory 6">
+                <p class="gallery-caption">Just Bestie Things! ✨</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">🍿 Movie Time! 🍿</h2>
+        <div class="video-container">
+            <p style="font-size: 1.4em; color: #d896ff; font-family: 'Chewy', cursive; margin-bottom: 15px;">A special little video just for you!</p>
+            
+            <video controls>
+                <source src="icecream.mp4" type="video/mp4">
+                Your browser does not support playing this video.
+            </video>
+        </div>
+
+        <div class="surprise-section">
+            <h2 class="section-title">I Have a Little Something for You... 🎁</h2>
+            <p style="font-size: 1.4em;">Since I love annoying you too... (in a nice way!)</p>
+            <button class="surprise-btn" onclick="revealSurprise()">Click to Open! ✨</button>
+            
+            <div id="surprise-message">
+                <p><strong>Surprise, Bestie!</strong> 🎊<br>
+                Having a best friend like you is a blessing. You inspire me to be better, our late-night chats are everything, and I wouldn't trade our random adventures for anything. You rock! <span style="color: #d8b6ff;">💜</span></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Made with bestie love and mischief! Always remember, you're awesome!</p>
+    </footer>
+
+    <script>
+        function revealSurprise() {
+            var message = document.getElementById("surprise-message");
+            if (message.style.display === "none" || message.style.display === "") {
+                message.style.display = "block";
+            } else {
+                message.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
